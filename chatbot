@@ -1,0 +1,59 @@
+import java.util.*;
+
+public class Chatbot {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Welcome to Customer Support Chatbot!");
+        System.out.println("Type 'exit' to quit.");
+
+        while (true) {
+            System.out.print("\nYou: ");
+            String s = sc.nextLine().toLowerCase(); // convert to lowercase
+
+            // Exit manually
+            if (s.contains("exit")) {
+                System.out.println("Bot: Thank you! Visit again.");
+                break;
+            }
+
+            // Exit on thanks
+            else if (s.contains("thanks") || s.contains("thank you")) {
+                System.out.println("Bot: You're welcome! Have a great day 😊");
+                break;
+            }
+
+            // Greeting
+            else if (s.contains("hi") || s.contains("hello") || s.contains("hey")) {
+                System.out.println("Bot: Hello! How can I help you?");
+            }
+
+            // Product info
+            else if (s.contains("product")) {
+                System.out.println("Bot: We offer phones, laptops, and accessories.");
+            }
+
+            // Price info
+            else if (s.contains("price")) {
+                System.out.println("Bot: Prices start from ₹5000 depending on product.");
+            }
+
+            // Service info
+            else if (s.contains("service")) {
+                System.out.println("Bot: We provide 1-year free service and support.");
+            }
+
+            // Delivery info
+            else if (s.contains("delivery")) {
+                System.out.println("Bot: Delivery takes 3-5 working days.");
+            }
+
+            // Default reply
+            else {
+                System.out.println("Bot: Sorry, I didn't understand. Please ask about products, price, or service.");
+            }
+        }
+
+        sc.close();
+    }
+}
